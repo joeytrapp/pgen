@@ -11,22 +11,27 @@ import (
 	"strings"
 )
 
-var version = "0.1.1"
-
 var (
-	help = flag.Bool("h", false, "show command usage")
-	ver  = flag.Bool("v", false, "show command version")
+	h       = flag.Bool("h", false, "show command usage")
+	v       = flag.Bool("v", false, "show command version")
+	s       = flag.Bool("s", false, "echo the p script content")
+	version = "0.1.1"
 )
 
 func main() {
 	flag.Parse()
 
-	if *ver {
+	if *v {
 		fmt.Println(version)
 		return
 	}
 
-	if *help || flag.Arg(0) == "" {
+	if *s {
+		fmt.Print(ScriptText())
+		return
+	}
+
+	if *h || flag.Arg(0) == "" {
 		fmt.Println(HelpText())
 		return
 	}
