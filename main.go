@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-var version = "0.1.0"
+var version = "0.1.1"
 
 var (
 	help = flag.Bool("h", false, "show command usage")
@@ -76,7 +76,9 @@ func main() {
 	contents := proj.Render()
 	if err := ioutil.WriteFile(fullpath, []byte(contents), 0744); err != nil {
 		fmt.Println("Failed writing tmux project file")
+		return
 	}
+	fmt.Println("Wrote tmux project file to " + fullpath)
 }
 
 func strToBool(str string) (bool, error) {
