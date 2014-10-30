@@ -52,10 +52,18 @@ func (p *Project) Template() string {
 PROJECT_NAME='%s'
 PROJECT_PWD='%s'
 
+_TMUX="$TMUX"
+export TMUX=""
+
 tmux has-session -t $PROJECT_NAME
 if [ $? != 0 ]; then
 %s
 	tmux select-window -t $PROJECT_NAME:1
 fi
-tmux attach -t $PROJECT_NAME`
+
+if [ "$_TMUX" != "" ]; then
+  tmux switch-client -t $PROJECT_NAME
+else
+  tmux attach -t $PROJECT_NAME
+fi`
 }
