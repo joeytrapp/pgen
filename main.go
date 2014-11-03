@@ -16,7 +16,7 @@ var (
 	h       = flag.Bool("h", false, "show command usage")
 	v       = flag.Bool("v", false, "show command version")
 	s       = flag.Bool("s", false, "echo the p script content")
-	version = "0.3.0"
+	version = "0.4.0"
 )
 
 func main() {
