@@ -35,3 +35,10 @@ Run the command, replacing `<project>` with your desired project name and follow
 Run the executable, replacing `<project>` with your previously created project. You can even run this from inside existing `tmux` sessions.
 
     p <project>
+
+### Add autocompletion
+
+Using the -a flag, `pgen` will echo an autocompletion script. This script will autocomplete `pgen` commands and project names when using the `p` script. You will want drop the script into your auto_completion.d folder, or add the second command to your startup file (.bashrc, etc).
+
+    sudo pgen -a > pgen_autocompletion.sh
+    . pgen_autocompletion.sh

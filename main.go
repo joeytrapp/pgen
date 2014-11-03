@@ -12,6 +12,7 @@ import (
 )
 
 var (
+	a       = flag.Bool("a", false, "echo the autocomplete script content")
 	h       = flag.Bool("h", false, "show command usage")
 	v       = flag.Bool("v", false, "show command version")
 	s       = flag.Bool("s", false, "echo the p script content")
@@ -28,6 +29,11 @@ func main() {
 
 	if *s {
 		fmt.Print(ScriptText())
+		return
+	}
+
+	if *a {
+		fmt.Print(AutocompleteText())
 		return
 	}
 
