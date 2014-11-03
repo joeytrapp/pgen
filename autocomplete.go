@@ -64,8 +64,10 @@ _pgen ()
         local ext=$(\ls -p $HOME/.projects \
                 2>/dev/null | sed -e "s/.*\///g")
         __pgencomp "
-            -s
             -a
+            -h
+            -s
+            -v
             "
         return
     fi
