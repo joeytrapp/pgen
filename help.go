@@ -5,6 +5,7 @@ func HelpText() string {
 
 Generate tmux project scripts.
 
+	-a  Echo the autocomplete script
 	-h  Display this help
 	-v  Display version
 `
