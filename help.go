@@ -7,6 +7,7 @@ Generate tmux project scripts.
 
 	-a  Echo the autocomplete script
 	-h  Display this help
+	-s  Echo the tmux project running script
 	-v  Display version
 `
 }
